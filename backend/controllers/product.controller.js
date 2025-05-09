@@ -5,7 +5,7 @@ const product = require('../models/product.model')
 const createproduct = async (req, res) => {
   try {
     const {
-      sellerId,
+    //   sellerId,
       productType,
       quantity,
       priceperton,
@@ -14,7 +14,7 @@ const createproduct = async (req, res) => {
     } = req.body;
 
     if (
-      !sellerId ||
+    //   !sellerId ||
       !productType ||
       !quantity ||
       !priceperton ||
@@ -25,15 +25,15 @@ const createproduct = async (req, res) => {
         .json({ success: false, message: "Please fill in all required fields." });
     }
 
-    const exists = await product.findOne({ sellerId });
-    if (exists) {
-      return res
-        .status(409)
-        .json({ success: false, message: "Username or phone already in use." });
-    }
+    // const exists = await product.findOne({ sellerId });
+    // if (exists) {
+    //   return res
+    //     .status(409)
+    //     .json({ success: false, message: "Username or phone already in use." });
+    // }
 
     const newProduct = new product({
-     sellerId,
+    //  sellerId,
       productType,
       quantity,
       priceperton,
