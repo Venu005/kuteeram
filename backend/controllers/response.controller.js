@@ -54,6 +54,7 @@ const handleBidResponse = async (req, res) => {
     bid.responses.push({
       sellerId,
       acceptedQuantity: acceptableQuantity,
+      amountForTheSeller: acceptableQuantity * bid.priceperton,
       responseStatus: "accepted",
     });
 
