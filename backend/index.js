@@ -6,6 +6,7 @@ const dotenv = require('dotenv').config()
 const connectDB = require('./mongo')
 const sellerroute = require('./routes/seller.route')
 const buyerroute = require('./routes/buyer.route')
+const productroute = require('./routes/product.route')
 
 
 const port = process.env.PORT;
@@ -26,6 +27,7 @@ app.use(cors({
 
  app.use("/api/v1/seller", sellerroute);
 app.use("/api/v1/buyer", buyerroute);
+app.use("/api/v1/product",productroute)
 
 
 const server = app.listen(port,() =>{
